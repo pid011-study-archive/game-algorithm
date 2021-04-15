@@ -1,17 +1,18 @@
 ﻿#include <iostream>
 #include <random>
-#include "SelectionSort.h"
+#include "MergeSort.h"
 
 int main()
 {
-    SelectionSort sort(100);
+    const int len = 20;
+    MergeSort sort(len);
 
     std::random_device rand;
     std::mt19937 randomGen(rand());
-    std::uniform_int_distribution<int> dist(1, 99);
+    std::uniform_int_distribution<int> dist(1, len - 1);
 
-    int data[100];
-    for (size_t i = 0; i < 100; i++)
+    int data[len];
+    for (size_t i = 0; i < len; i++)
     {
         data[i] = dist(randomGen);
     }
